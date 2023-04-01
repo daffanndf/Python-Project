@@ -1,3 +1,5 @@
+import time
+
 class Kontak :
    def __init__(self, input_name, input_telephone, date_add) :
       self.name = input_name
@@ -20,6 +22,13 @@ class Kontak :
          else :
             print("Kontak gagal ditambahkan")
             continue
+
+def date_add() :
+   tanggal = time.strftime("%d/%m/%Y")
+   return tanggal
+
+def kontak_add(kontak_baru) :
+   daftar_kontak.append(kontak_baru)
      
 if __name__ == "__main__" :
    while True :
