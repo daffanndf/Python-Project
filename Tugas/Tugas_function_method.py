@@ -67,8 +67,15 @@ if __name__ == "__main__" :
       
       user_option = input("\nMasukan pilihan : ")
       if user_option == "1" :
+         kontak.reading()
+         input("\nTekan apa saja untuk melanjutkan : ")
+         continue
         
       elif user_option == "2" :
+         nomor = input("Masukan nomor telepon : ")
+         kontak.searching(nomor)
+         input("\nTekan apa saja untuk melanjutkan : ")
+         continue
         
       elif user_option == "3" :
          Kontak.adding()
@@ -78,7 +85,10 @@ if __name__ == "__main__" :
          Kontak.removing(nomor)
          
       elif user_option == "0" :
+         print("Anda akan keluar dari program")
+         print(".\n.\n.")
         
       else :
+         print("kode yang anda masukan salah")
         
 print("Anda telah keluar dari program")
