@@ -22,13 +22,38 @@ class Kontak :
          else :
             print("Kontak gagal ditambahkan")
             continue
+            
+   def removing(input_nomor) :
+      os.system("cls")
+      for i in range(len(daftar_kontak)) :
+         if input_nomor == daftar_kontak[i].__dict__["telephone"] :
+            print("Data Kontak")
+            print("===========")
+            print(f"Nama                : {daftar_kontak[i].__dict__['name']}")
+            print(f"Nomor               : {daftar_kontak[i].__dict__['telephone']}")
+            print(f"Tanggal ditambahkan : {daftar_kontak[i].__dict__['date']}")
 
+            print("\nAnda yakin ingin menghapus kontak ini?")
+            user_option = input("Lanjutkan ? (Y/N) : ")
+            if user_option == "Y" or user_option == "y" :
+               kontak_remove(daftar_kontak[i])
+               continue
+            else :
+               print("Kontak gagal dihapus")
+               break
+
+               
 def date_add() :
    tanggal = time.strftime("%d/%m/%Y")
    return tanggal
 
 def kontak_add(kontak_baru) :
    daftar_kontak.append(kontak_baru)
+
+def kontak_remove(kontak_hapus) :
+   daftar_kontak.remove(kontak_hapus)
+
+daftar_kontak = []
      
 if __name__ == "__main__" :
    while True :
@@ -49,7 +74,9 @@ if __name__ == "__main__" :
          Kontak.adding()
           
       elif user_option == "4" :
-        
+         nomor = input("Masukan nomor telepon : ")
+         Kontak.removing(nomor)
+         
       elif user_option == "0" :
         
       else :
